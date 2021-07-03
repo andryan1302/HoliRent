@@ -29,7 +29,7 @@
                             <th>Rent Date</th>
                             <th>End Date</th>
                             <th>Total</th>
-                            <th>Action</th>
+                            <th>Status</th>
                           </tr>
                           @foreach($data as $datas)
                           <tr>
@@ -42,13 +42,7 @@
                             <td>{{$datas->tanggal_sewa}}</td>
                             <td>{{$datas->tanggal_selesai}}</td>
                             <td>{{$datas->total}}</td>
-                            <td style="min-width:325px;"> 
-                                <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a> 
-                                <form action="#" class="d-inline formdelete" method="post">
-                                  @csrf
-                                    <button type="submit" class="btn btn-danger btnHapus"><i class="fas fa-timess"></i> Cancel</button>
-                                </form>
-                            </td>
+                            <td>{{$datas->status}}</td>                 
                           </tr>
                           @endforeach
                         </table>

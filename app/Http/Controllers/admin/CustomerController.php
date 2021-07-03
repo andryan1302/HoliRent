@@ -7,6 +7,7 @@ use App\Customer;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Customer\UpdateRequest;
 
+
 class CustomerController extends Controller
 {
     /**

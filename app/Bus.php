@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bus extends Model
 {
-
     protected $fillable = [
         'plat_nomor',
         'nama_bus',

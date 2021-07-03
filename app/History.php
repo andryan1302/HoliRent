@@ -11,11 +11,13 @@ class History extends Model
     protected $keyType = 'string';
     public $incrementing = false;
     protected $fillable = [
-        'customers_id',
+        'no_transaksi',
+        'customer_id',
         'bus_id',
         'tanggal_sewa',
         'tanggal_selesai',
         'total',
+        'status',
     ];
 
     public function bus(){

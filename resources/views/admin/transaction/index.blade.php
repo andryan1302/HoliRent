@@ -30,6 +30,8 @@
                             <th>End Date</th>
                             <th>Total</th>
                             <th>Payment Method</th>
+                            <th>Status</th>
+                            <th>Proof of Payment</th>
                             <th>Action</th>
                           </tr>
                           @foreach($data as $datas)
@@ -44,11 +46,18 @@
                             <td>{{$datas->tanggal_selesai}}</td>
                             <td>{{$datas->total}}</td>
                             <td>{{$datas->metode_pembayaran}}</td>
+                            <td>{{$datas->status}}</td>
+                            <td><img src="{{ asset("images/$datas->bukti_pembayaran")}}" alt="" width="100px"></td>
                             <td style="min-width:325px;"> 
-                                <a href="#" class="btn btn-success"><i class="fas fa-edit"></i>Success</a> 
-                                <form action="#" class="d-inline formdelete" method="post">
+                                <form action="{{route('supplier.transaction.proses',$datas->no_transaksi)}}" class="d-inline formdelete" method="post">
                                   @csrf
-                                    <button type="submit" class="btn btn-danger btnHapus"><i class="fas fa-timess"></i> Cancel</button>
+                                  @method('put')
+                                    <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Success</button>
+                                </form> 
+                                <form action="{{route('supplier.transaction.decline',$datas->no_transaksi)}}" class="d-inline formdelete" method="post">
+                                  @csrf
+                                  @method('put')
+                                    <button type="submit" class="btn btn-danger btnHapus"><i class="fas fa-times"></i> Decline</button>
                                 </form>
                             </td>
                           </tr>

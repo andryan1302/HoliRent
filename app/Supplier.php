@@ -13,7 +13,8 @@ class Supplier extends SetAuth
         'nama_company',
         'password',
         'bus_id',
-        'no_telp'
+        'no_telp',
+        'status'
     ];
 
     protected $hidden = [

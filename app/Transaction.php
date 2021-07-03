@@ -12,12 +12,14 @@ class Transaction extends Model
     public $incrementing = false;
     protected $fillable = [
         'no_transaksi',
-        'customers_id',
+        'customer_id',
         'bus_id',
         'tanggal_sewa',
         'tanggal_selesai',
         'total',
-        'metode_pembayaran'
+        'metode_pembayaran',
+        'status',
+        'bukti_pembayaran',
     ];
 
     public function bus(){

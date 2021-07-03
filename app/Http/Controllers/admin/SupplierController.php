@@ -16,7 +16,8 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        $data = Supplier::paginate(4);
+        $data = Supplier::where('status','A')
+                        ->paginate(4);
         return view('admin/supplier/index',compact('data'));
     }
 
@@ -50,10 +51,29 @@ class SupplierController extends Controller
     public function show(request $request)
     {
         $search = $request->get('data_search');
-        $data = Supplier::where('nama_company', 'like', "%$search%")
-                        ->orWhere('email', 'like', '%$search%')
-                        ->paginate(4);
+        $data = Supplier::where([
+                        ['nama_company', 'like', "%$search%"],
+                        ['status', '=', 'A'],
+                        ])
+                        ->orWhere([
+                            ['email', 'like', "%$search%"],
+                            ['status', '=', 'A'],
+                            ])->paginate(4);
         return view('admin/supplier/index',['data' => $data]);
+    }
+
+    public function showrequest(request $request)
+    {
+        $search = $request->get('data_search');
+        $data = Supplier::where([
+                        ['nama_company', 'like', "%$search%"],
+                        ['status', '=', 'D'],
+                        ])
+                        ->orWhere([
+                            ['email', 'like', "%$search%"],
+                            ['status', '=', 'D'],
+                            ])->paginate(4);
+        return view('admin/supplier/reqindex',['data' => $data]);
     }
 
     /**
@@ -113,5 +133,20 @@ class SupplierController extends Controller
         $data->delete();
 
         return redirect()->route('admin.supplier')->with('success', 'Delete Bus Successfully');
+    }
+
+    public function requestSupplier(){
+        $data = Supplier::where('status','D')
+                            ->paginate(4);
+        $count = $data->count();
+        return view('admin/supplier/reqindex',['data' => $data]);
+    }
+
+    public function acceptrequest($id){
+        $data =  Supplier::findOrFail($id);
+        $data->status = 'A';
+        $data->save();
+
+        return redirect()->route('admin.supplier.request')->with('success', 'Your Data is Accept');
     }
 }

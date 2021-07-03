@@ -1,0 +1,188 @@
+body {
+    min-height: 100vh;
+}
+.navbar {
+    font-family: "Helvetica Neue";
+    background-color: #50b4f4;
+}
+.navbar .navbar-brand a {
+    font-size: 25px;
+}
+.navbar-brand img {
+    border-radius: 10%;
+}
+.navbar-brand a,
+.navbar-brand a:hover {
+    color: white;
+    text-decoration: none;
+}
+.navbar button {
+    color: #ffff;
+    font-weight: bold;
+    border: 1px #ffff solid;
+    transition: 0.5s;
+    width: 100px;
+}
+.navbar button:hover {
+    background-color: #ffff;
+    color: #50b4f4;
+    transition: 0.5s;
+}
+.slide-foto {
+    height: 400px;
+    position: relative;
+    margin: auto;
+    z-index: -1;
+}
+
+.produk-text {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    text-align: left;
+}
+
+.workdays {
+    display: flex;
+}
+
+.blockquote p {
+    color: #0053a1;
+    font-weight: bold;
+}
+blockquote footer {
+    color: #808080;
+    font-size: 17px;
+}
+
+.status i {
+    color: #ff9500;
+}
+
+.footer-style {
+    color: black;
+    background-color: #50b4f4;
+}
+
+.modal-body h5 {
+    font-weight: bold;
+    font-size: 23px;
+}
+.modal-body a,
+.modal-body a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+.dropdown-menu a {
+    color: black;
+    transition: 0.6s;
+}
+.dropdown-menu a:hover {
+    color: #50b4f4;
+    transition: 0.6s;
+}
+
+.produk-pic {
+    position: relative;
+    margin: 10px auto 0;
+}
+
+.produk-pic .card {
+    position: relative;
+    width: calc(300px - 50px);
+    height: calc(300px - 30px);
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.produk-pic .card:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transform: scaleX(0);
+    opacity: 0;
+    z-index: 1;
+}
+
+.produk-pic .card:hover:before {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.produk-pic .card:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transform: scaleY(0);
+    opacity: 0;
+    z-index: 1;
+}
+
+.produk-pic .card:hover:after {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.produk-pic .card .imgBox {
+    position: relative;
+}
+
+.produk-pic .card .imgBox img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.produk-pic .card:hover .imgBox img {
+    opacity: 0.5;
+    transform: scale(1.2);
+}
+
+.produk-pic .card .content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.produk-pic .card .content .btn-atas {
+    transition: 0.5s;
+    transform: translateY(-50px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.produk-pic .card .content .btn-bawah {
+    transition: 0.5s;
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.produk-pic .card:hover .content .btn-atas,
+.produk-pic .card:hover .content .btn-bawah {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: 0.2s;
+}

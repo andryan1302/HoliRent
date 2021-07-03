@@ -19,6 +19,7 @@ class CreateSuppliersTable extends Migration
             $table->string('nama_company')->unique();
             $table->string('password');
             $table->string('no_telp');
+            $table->enum('status',['A','D']);
             $table->timestamps();
         });
     }

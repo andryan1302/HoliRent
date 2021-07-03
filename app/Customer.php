@@ -9,7 +9,7 @@ class Customer extends SetAuth
     
     protected $fillable = [
         'email',
-        'name',
+        'nama',
         'password',
         'alamat',
         'status'

@@ -20,11 +20,13 @@ class DashboardController extends Controller
         $supp = Supplier::all()->count();
         $trans = Transaction::all()->count();
         $history = History::all()->count();
+        $supprequest = Supplier::where('status','D')->count();
         return view('admin/dashboard',[
             'cust' => $cust,
             'supp' => $supp,
             'trans' => $trans,
             'history' => $history,
+            'reqsup' => $supprequest,
         ]);
     }
 }

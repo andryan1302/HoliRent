@@ -1,0 +1,81 @@
+.custom-shape-divider-bottom-1609483570 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1609483570 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+.custom-shape-divider-bottom-1609483570 .shape-fill {
+    fill: #9013FE;
+}
+/* Pisah */
+.custom-shape-divider-top-1609485205 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1609485205 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 132px;
+}
+
+.custom-shape-divider-top-1609485205 .shape-fill {
+    fill: #9013FE;
+}
+/* pisah */
+.custom-shape-divider-bottom-1609486435 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1609486435 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 132px;
+}
+
+.custom-shape-divider-bottom-1609486435 .shape-fill {
+    fill: rgb(214, 55, 153);
+}
+/* Pisah */
+.custom-shape-divider-bottom-1609487314 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1609487314 svg {
+    position: relative;
+    display: block;
+    width: calc(113% + 1.3px);
+    height: 100px;
+}
+
+.custom-shape-divider-bottom-1609487314 .shape-fill {
+    fill: #000000;
+}
